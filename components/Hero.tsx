@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 export default function Hero() {
   const container = {
@@ -23,9 +24,15 @@ export default function Hero() {
       animate="show" 
       className="space-y-8 pt-2 pb-20"
     >
-      {/* Premium Initial Avatar */}
-      <motion.div variants={item} className="w-28 h-28 sm:w-32 sm:h-32 rounded-3xl bg-gradient-to-br from-blue-600 to-indigo-800 flex items-center justify-center shadow-xl shadow-blue-500/20 ring-4 ring-white">
-        <span className="text-4xl sm:text-5xl font-bold text-white tracking-tighter">MW</span>
+      {/* Profile Image */}
+      <motion.div variants={item} className="relative w-28 h-28 sm:w-32 sm:h-32 rounded-3xl shadow-xl shadow-blue-500/20 ring-4 ring-white overflow-hidden bg-slate-100">
+        <Image
+          src="/MdWasim.png"
+          alt="Mohammad Wasim"
+          fill
+          priority
+          className="object-cover object-top"
+        />
       </motion.div>
 
       <motion.div variants={item} className="space-y-4">
@@ -37,7 +44,7 @@ export default function Hero() {
         </p>
       </motion.div>
 
-      {/* Social Proof / Stats Bar - Now a compact grid */}
+      {/* Social Proof / Stats Bar - Compact grid */}
       <motion.div variants={item} className="grid grid-cols-3 gap-2 sm:gap-4 py-4 max-w-lg">
         {[
           { label: "Experience", value: "6+ Yrs" },
